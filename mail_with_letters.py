@@ -8,7 +8,7 @@ from email.mime.base import MIMEBase
 from email import encoders
 
 email_address = 'wceam2024@gmail.com'
-email_password = '' # Generate App Password
+email_password = 'rmqq ircz piep crwx' # Generate App Password
 smtp_server = 'smtp.gmail.com'
 smtp_port = 587
 
@@ -50,18 +50,18 @@ with open('Review Abstract Submission.csv', mode ='r')as file:
         Author = lines[3]
         Title = lines[1]
         Comments = lines[5]
-        document_name = f'{Number}.pdf'
-        if lines[4] == "Accepted":
-            Subject = "Acceptance of Abstract Submission"
-            Body = f'Dear {Author},\n\nPlease find the document enclosed.\n\nBest regards,\nWCEAM Team'
-            Path = f'Letters_PDF\{Number}_Accepted.pdf'
-            send_email(Email, Subject, Body, Path)
-            print(f'Email sent to abstract number {Number}')
-        elif lines[4] == "Rejected":  
-            Subject = "Rejection of Abstract Submission"
-            Body = f'Dear {Author},\n\nPlease find the document enclosed.\n\nBest regards,\nWCEAM Team'
-            Path = f'Letters_PDF\{Number}_Rejected.pdf'
-            send_email(Email, Subject, Body, Path)
-            print(f'Email sent to abstract number {Number}')
+        if Number.isdigit() and int(Number) > 238:
+            if lines[4] == "Accepted":
+                Subject = "Acceptance of Abstract Submission"
+                Body = f'Dear {Author},\n\nPlease find the document enclosed.\n\nBest regards,\nWCEAM Team'
+                Path = f'Letters_PDF\{Number}_Accepted.pdf'
+                send_email(Email, Subject, Body, Path)
+                print(f'Email sent to abstract number {Number}')
+            elif lines[4] == "Rejected":  
+                Subject = "Rejection of Abstract Submission"
+                Body = f'Dear {Author},\n\nPlease find the document enclosed.\n\nBest regards,\nWCEAM Team'
+                Path = f'Letters_PDF\{Number}_Rejected.pdf'
+                send_email(Email, Subject, Body, Path)
+                print(f'Email sent to abstract number {Number}')
 
 print('All emails have been sent.')

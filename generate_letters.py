@@ -13,6 +13,7 @@ with open('Review Abstract Submission.csv', mode ='r')as file:
         Title = lines[1]
         Comments = lines[5]
         context = {'Number': Number, 'Author': Author, 'Title': Title, 'Comments': Comments}
+        print("Generating for", Number)
         if lines[4] == "Accepted":
             accept_doc.render(context)
             accept_doc.save(f"Letters_Docx\{Number}_Accepted.docx")
@@ -21,4 +22,3 @@ with open('Review Abstract Submission.csv', mode ='r')as file:
             reject_doc.render(context)
             reject_doc.save(f"Letters_Docx\{Number}_Rejected.docx")
             convert(f"Letters_Docx\{Number}_Rejected.docx", f"Letters_PDF\{Number}_Rejected.pdf")
- 
