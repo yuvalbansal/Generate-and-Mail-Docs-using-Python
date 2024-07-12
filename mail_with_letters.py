@@ -8,7 +8,7 @@ from email.mime.base import MIMEBase
 from email import encoders
 
 email_address = 'wceam2024@gmail.com'
-email_password = 'rmqq ircz piep crwx' # Generate App Password
+email_password = '' # Generate App Password
 smtp_server = 'smtp.gmail.com'
 smtp_port = 587
 
@@ -50,7 +50,7 @@ with open('Review Abstract Submission.csv', mode ='r')as file:
         Author = lines[3]
         Title = lines[1]
         Comments = lines[5]
-        if Number.isdigit() and int(Number) > 238:
+        if Number.isdigit() and int(Number) > 251:
             if lines[4] == "Accepted":
                 Subject = "Acceptance of Abstract Submission"
                 Body = f'Dear {Author},\n\nPlease find the document enclosed.\n\nBest regards,\nWCEAM Team'
