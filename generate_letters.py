@@ -13,7 +13,7 @@ with open('Review Abstract Submission.csv', mode ='r')as file:
         Title = lines[1]
         Comments = lines[5]
         context = {'Number': Number, 'Author': Author, 'Title': Title, 'Comments': Comments}
-        if (Number.isdigit() == True) and (int(Number) > 251):
+        if (Number.isdigit() == True):
             print("Generating for", Number)
             if lines[4] == "Accepted":
                 accept_doc.render(context)

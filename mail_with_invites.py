@@ -50,7 +50,7 @@ with open('Review Abstract Submission.csv', mode ='r')as file:
         Author = lines[3]
         Title = lines[1]
         Comments = lines[5]
-        if Number.isdigit() and int(Number) > 251:
+        if Number.isdigit():
             if lines[4] == "Accepted":
                 Subject = "Your Registration for WCEAM 2024 Conference"
                 Body = f'Dear {Author},\n\nPlease find the document enclosed.\n\nBest regards,\nWCEAM Team'
