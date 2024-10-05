@@ -8,7 +8,7 @@ from email.mime.base import MIMEBase
 from email import encoders
 
 email_address = 'wceam2024@gmail.com'
-email_password = 'rmqq ircz piep crwx' # Generate App Password
+email_password = '' # Generate App Password
 smtp_server = 'smtp.gmail.com'
 smtp_port = 587
 
